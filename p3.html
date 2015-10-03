@@ -10,6 +10,7 @@
                 width: 20px;
                 height: 75px;   /* We'll override this later */
                 background-color: teal;
+                margin-right: 2px;
             }
         </style>
     </head>
@@ -22,11 +23,8 @@
             .append("div")
             .attr("class", "bar")
             .style("height", function(d) {
-                return d + "px";
+                return 5*d + "px";
             });
         </script>
-        <svg width="50" height="50">
-            <circle cx="25" cy="25" r="22" fill="blue" stroke="gray" stroke-width="2"/>
-        </svg>        
     </body>
 </html>
