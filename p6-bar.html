@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.js"></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var dataset = [];
+        for (var i = 0; i < 5; i++) {
+            var newNumber = Math.random() * 30;
+            newNumber = i * 5 + 5;
+            dataset.push(Math.round(newNumber));
+        }
+        dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+        var w = 500;
+        var h = 100;
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+
+        var rects = svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect");
+
+        rects
+            .attr("x", function(d, i) {
+                return (i * 21); // Bar width of 20 plus 1 for padding
+            })
+            .attr("y", 0)
+            .attr("width", 20)
+            .attr("height", 100);
+        </script>
+    </body>
+</html>
